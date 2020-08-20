@@ -1,0 +1,11 @@
+- story: Finish this story
+  us: As a foo I want to bar so that baz
+  ac: Accepted
+  pt: 1
+- story: Finish this other story
+  us: As a foo I want to bar so that baz
+  ac: Accepted
+- epic: Finish this epic
+  us: As a foo I want to bar so that baz
+  ac: Accepted
+  pt: 1  
