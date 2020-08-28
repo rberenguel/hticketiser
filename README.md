@@ -32,7 +32,7 @@ _Note_: User stories are expected in the format
 As a(n) _, I want to _ so that _
 ```
 
-This is enforced by the parser in [Story.hs](src/Story.hs) (used in [Tickets.hs](src/Tickets.hs)). This is so stories can be rewritten with new lines, they look better. I recommend you set up some macro/snippet in your editor so you can create stories following this template by default, then you have all the power of machines to make sure you do everything the right way.
+This is enforced by the parser in [Story.hs](src/Story.hs) (used in [Tickets.hs](src/Tickets.hs)). Note that this processing is done via parser combinators, which is neither the most efficient nor the easiest way of doing it. I wanted to use PCs in a later project and since this is an easy place, why not. This is so stories can be rewritten with new lines, they look better. I recommend you set up some macro/snippet in your editor so you can create stories following this template by default, then you have all the power of machines to make sure you do everything the right way.
 
 ---
 
