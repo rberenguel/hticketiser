@@ -14,7 +14,7 @@ Write a `tickets.yaml` file like
 
 ```yaml
 - epic: Title goes here
-  us: User story goes here
+  us: User story goes here, needs to be PROPERLY formatted
   ac: Acceptance criteria
 - story: Title goes here
   us: You know the drill
@@ -25,6 +25,16 @@ Write a `tickets.yaml` file like
   desc: Or points, which should be a number
   pt: 34
 ```
+
+_Note_: User stories are expected in the format
+
+```
+As a(n) _, I want to _ so that _
+```
+
+This is enforced by the parser in [Story.hs](src/Story.hs) (used in [Tickets.hs](src/Tickets.hs)). This is so stories can be rewritten with new lines, they look better. I recommend you set up some macro/snippet in your editor so you can create stories following this template by default, then you have all the power of machines to make sure you do everything the right way.
+
+---
 
 Set up a file `~/.hticketiser.yaml` with
 
@@ -82,3 +92,7 @@ Well, if you can read it you can figure out how this works and reimplement it in
 #### Why not just ignore Jira?
 
 Well, planning projects requires writing tickets. In particular, there are some kind of tickets product owners can't write. The very technical in particular, and if I need to write them, I want to avoid as much as possible having to click in 25 different places and wait for a not-very-fast-API.
+
+#### What is this [Stan](stan.html) file?
+
+I have started using [Stan](https://github.com/kowainik/stan) after a suggestion from Reddit when I shared my project there (I got a lot of useful suggestions and I will try to implement/use them all as time allows). It is a static code analyzer that suggests safety/performance improvements, seems very slick so far.

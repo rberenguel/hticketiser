@@ -17,10 +17,14 @@ common deps
                        bytestring, raw-strings-qq, 
                        yaml, parsec, aeson, aeson-pretty, 
                        http-conduit, http-types, 
-                       directory, filepath
+                       directory, filepath, mtl
   default-language:    Haskell2010
-  other-modules:       Tickets, API, Jira, Config
-  ghc-options:         -fwarn-incomplete-patterns -fwarn-unused-imports -Werror=incomplete-patterns
+  other-modules:       Tickets, API, Jira, Config, Story
+  ghc-options:         -fwarn-incomplete-patterns 
+                       -fwarn-unused-imports 
+                       -Werror=incomplete-patterns
+                       -fwrite-ide-info
+                       -hiedir=.hie
 
 executable hticketiser
   import:              deps

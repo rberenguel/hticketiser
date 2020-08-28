@@ -9,7 +9,6 @@ import Jira (Board, red, sas)
 import Options.Applicative
 import System.Directory
 import System.FilePath (joinPath, splitPath)
-import System.IO
 import Tickets
 import Prelude
 

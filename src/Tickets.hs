@@ -11,6 +11,7 @@ import Data.Yaml (FromJSON (..), ToJSON (..), (.:), (.:?))
 import qualified Data.Yaml as Y
 import Data.Yaml.Aeson (object, (.=))
 import Jira
+import Story
 import System.IO
 
 newtype Title = Title Text
@@ -46,10 +47,12 @@ data Ticket
       }
   deriving (Eq, Show)
 
+reformatted = (UserStory . reformatUserStory)
+
 storyParser obj =
   StoryTicket
     <$> (obj .: "story")
-    <*> obj .: "us"
+    <*> (fmap reformatted (obj .: "us"))
     <*> obj .: "ac"
     <*> obj .:? "desc"
     <*> obj .:? "pt"
@@ -58,7 +61,7 @@ storyParser obj =
 epicParser obj =
   EpicTicket
     <$> obj .: "epic"
-    <*> obj .: "us"
+    <*> (fmap reformatted (obj .: "us"))
     <*> obj .: "ac"
     <*> obj .:? "desc"
 
