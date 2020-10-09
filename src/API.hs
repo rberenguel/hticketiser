@@ -51,13 +51,14 @@ sendOneTicket (JiraConfig path auth) epic (TicketWithBoard ticket board) = do
     configureRequest r =
       setRequestHeaders (headers auth) $
         setRequestBodyLBS
-          ( case epic of
-              Nothing -> encode (TicketWithBoard ticket board)
-              Just epic ->
-                encode
-                  ( TicketWithBoard
-                      ticket {_epic_field = Just (T.pack epic)}
-                      board
-                  )
+          ( case (epic, ticket) of
+              (Just epic, StoryTicket {}) ->
+                ( encode
+                    ( TicketWithBoard
+                        ticket {_epic_field = Just (T.pack epic)}
+                        board
+                    )
+                )
+              _ -> encode (TicketWithBoard ticket board)
           )
           r
