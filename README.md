@@ -4,7 +4,7 @@ From YAML to Jira tickets.
 
 ---
 
-This is a reimplementation in Haskell of _the ticketiser_ I have been using at work for close to two years. That version is written in Python and it was a bit too complex to generalise. This one is not easy, but at least having a compiled language means tinkering with it to make it work is a bit less sensitive.
+This is a reimplementation in Haskell of _the ticketiser_ I have been using at work for close to two years. That version was written in Python and it was a bit too complex to generalise. This one is not easy either, but at least having a compiled language means tinkering with it to make it work is a bit less sensitive and prone to breaking.
 
 You can read a [blog post about my experience using Haskell to write this project](https://mostlymaths.net/2020/08/the-ticketiser-2-now-in-haskell.html/), since this is the first time I have written anything of any non-trivial size.
 
